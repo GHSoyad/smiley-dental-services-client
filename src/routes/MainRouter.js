@@ -9,6 +9,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
+                loader: () => fetch('https://smiley-dental-services-server.vercel.app/services-3'),
                 element: <Home></Home>
             }
         ]
