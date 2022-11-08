@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
+import Review from '../Review/Review';
 
 const Reviews = ({ id }) => {
 
     const { userInfo } = useContext(UserContext);
+    const [reviews, setReviews] = useState([]);
 
     const handleReview = (event) => {
         event.preventDefault()
@@ -14,41 +17,69 @@ const Reviews = ({ id }) => {
         const userEmail = userInfo?.email;
         const userImg = userInfo?.photoURL;
 
-        const data = {
+        const today = new Date();
+        const date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+        const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+        const dateTime = `${date} ${time}`
+
+        const reviewData = {
             serviceId,
             userName,
             userEmail,
             userImg,
-            review
+            review,
+            dateTime
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://smiley-dental-services-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(reviewData)
         })
             .then(res => res.json())
             .then(data => {
                 const inserted = data.acknowledged;
+                const _id = data.insertedId;
                 if (inserted) {
                     event.target.reset();
                     toast.success('Review Submitted');
+                    const newReview = { ...reviewData, _id }
+                    const newReviews = [newReview, ...reviews]
+                    console.log(newReviews)
+                    setReviews(newReviews)
                 }
             })
             .catch(error => toast.error(error.message))
     }
 
-    return (
-        <div className='gap-8 bg-base-300/70 rounded-xl p-4 lg:p-8 mt-8'>
-            <form onSubmit={handleReview}>
-                <p className='text-xl font-medium mb-1'>Write your review</p>
-                <textarea name='review' className="textarea textarea-primary w-full text-base my-3" rows="3" placeholder="Write review here..." required ></textarea>
-                <button type='submit' className='btn btn-primary'>Submit Review</button>
-            </form>
-            <div>
+    useEffect(() => {
+        fetch(`https://smiley-dental-services-server.vercel.app/reviews?serviceId=${id}`)
+            .then(res => res.json())
+            .then(data => setReviews(data))
+            .catch(error => console.log(error))
+    }, [id])
 
+    return (
+        <div className='flex flex-col gap-8 bg-base-300/70 rounded-xl p-4 lg:p-8 mt-8'>
+            {
+                userInfo && userInfo?.email ?
+                    <form onSubmit={handleReview}>
+                        <p className='text-xl font-medium mb-1'>Write your review</p>
+                        <textarea name='review' className="textarea textarea-primary w-full text-base my-3" rows="3" placeholder="Write review here..." required ></textarea>
+                        <button type='submit' className='btn btn-primary'>Submit Review</button>
+                    </form>
+                    :
+                    <div className='flex items-center gap-4 text-xl font-medium'>
+                        <p>Login to Review</p>
+                        <Link to='/login' className='text-primary hover:underline'>Login here!</Link>
+                    </div>
+            }
+            <div className='flex flex-col gap-4'>
+                {
+                    reviews.map(reviewData => <Review key={reviewData._id} reviewData={reviewData}></Review>)
+                }
             </div>
         </div>
     );
