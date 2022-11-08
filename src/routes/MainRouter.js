@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
 import Home from "../pages/Home/Home";
+import Register from "../pages/Register/Register";
 import ServicePage from "../pages/ServicePage/ServicePage";
 import Services from "../pages/Services/Services";
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
                 path: "/service/:id",
                 loader: ({ params }) => fetch(`https://smiley-dental-services-server.vercel.app/service/${params.id}`),
                 element: <ServicePage></ServicePage>
+            },
+            {
+                path: "/register",
+                element: <Register></Register>
             }
         ]
     }

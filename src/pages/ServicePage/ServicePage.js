@@ -11,7 +11,7 @@ const ServicePage = () => {
 
     return (
         <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_348px)]'>
-            <div className='flex flex-col md:flex-row gap-8 bg-base-200/90 rounded-xl p-4 lg:p-8'>
+            <div className='flex flex-col md:flex-row gap-8 bg-base-300/70 rounded-xl p-4 lg:p-8'>
                 <img src={img} alt="" className='md:w-1/2 rounded-lg' />
                 <div className='md:w-1/2 flex flex-col gap-3 lg:gap-8 text-base lg:text-xl'>
                     <h2 className='text-2xl lg:text-3xl font-semibold'>{name}</h2>

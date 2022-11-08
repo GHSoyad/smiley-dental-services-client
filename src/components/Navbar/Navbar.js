@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
 import logo from '../../logo.png';
 
 const Navbar = () => {
+
+    const { userInfo } = useContext(UserContext)
 
     return (
         <div className="navbar bg-base-100 container mx-auto max-w-screen-xl mb-4 md:mb-10 pt:4 md:pt-6 justify-between">
@@ -29,6 +32,8 @@ const Navbar = () => {
             <div className="hidden md:flex">
                 <ul className="menu menu-horizontal p-0 gap-2 font-bold items-center">
                     <li><NavLink to='/services' className='py-2.5 px-5'>Services</NavLink></li>
+                    <li><NavLink to='/register' className='py-2.5 px-5'>Register</NavLink></li>
+                    <p>{userInfo.email}</p>
                 </ul>
 
             </div>
