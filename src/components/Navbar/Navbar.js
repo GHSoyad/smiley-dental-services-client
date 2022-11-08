@@ -33,7 +33,8 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0 gap-2 font-bold items-center">
                     <li><NavLink to='/services' className='py-2.5 px-5'>Services</NavLink></li>
                     <li><NavLink to='/register' className='py-2.5 px-5'>Register</NavLink></li>
-                    <p>{userInfo.email}</p>
+                    <li><NavLink to='/login' className='py-2.5 px-5'>Login</NavLink></li>
+                    <p>{userInfo?.email}</p>
                 </ul>
 
             </div>
