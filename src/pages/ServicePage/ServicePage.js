@@ -17,11 +17,11 @@ const ServicePage = () => {
                     <h2 className='text-2xl lg:text-3xl font-semibold'>{name}</h2>
                     <div className='flex gap-8 lg:gap-12'>
                         <div className='flex items-center gap-2'>
-                            <FaStar className='text-amber-300'></FaStar>
+                            <FaStar className='text-primary'></FaStar>
                             <p className='font-medium'>Rating: {rating}</p>
                         </div>
                         <div className='flex items-center gap-1'>
-                            <FaDollarSign className='text-amber-300'></FaDollarSign>
+                            <FaDollarSign className='text-primary'></FaDollarSign>
                             <p className='font-medium'>Cost: {cost}</p>
                         </div>
                     </div>

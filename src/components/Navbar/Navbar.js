@@ -69,7 +69,7 @@ const Navbar = () => {
                             <li><Link className='py-2.5 px-4' onClick={handleSignOut}>Logout</Link></li>
                             <li className='ml-4' title={userInfo?.displayName || userInfo?.email}>
                                 {userInfo?.photoURL ?
-                                    <img className='w-8 p-0 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' src={userInfo?.photoURL} alt=''></img>
+                                    <img className='w-8 h-8 object-cover p-0 rounded-full' src={userInfo?.photoURL} alt=''></img>
                                     :
                                     <FaUser className='text-primary p-1 text-3xl'></FaUser>
                                 }

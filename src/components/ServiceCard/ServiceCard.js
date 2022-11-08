@@ -3,7 +3,6 @@ import { FaDollarSign } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
-    console.log(service)
 
     const { name, img, cost, description, _id } = service;
 

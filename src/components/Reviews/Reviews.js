@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { FaSpinner } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
 import Review from '../Review/Review';
@@ -8,6 +9,7 @@ const Reviews = ({ id }) => {
 
     const { userInfo } = useContext(UserContext);
     const [reviews, setReviews] = useState([]);
+    const [reviewLoader, setReviewLoader] = useState(true);
 
     const handleReview = (event) => {
         event.preventDefault()
@@ -47,7 +49,6 @@ const Reviews = ({ id }) => {
                     toast.success('Review Submitted');
                     const newReview = { ...reviewData, _id }
                     const newReviews = [newReview, ...reviews]
-                    console.log(newReviews)
                     setReviews(newReviews)
                 }
             })
@@ -57,9 +58,12 @@ const Reviews = ({ id }) => {
     useEffect(() => {
         fetch(`https://smiley-dental-services-server.vercel.app/reviews?serviceId=${id}`)
             .then(res => res.json())
-            .then(data => setReviews(data))
+            .then(data => {
+                setReviews(data);
+                setReviewLoader(false);
+            })
             .catch(error => console.log(error))
-    }, [id])
+    }, [id, setReviewLoader])
 
     return (
         <div className='flex flex-col gap-8 bg-base-300/70 rounded-xl p-4 lg:p-8 mt-8'>
@@ -78,9 +82,16 @@ const Reviews = ({ id }) => {
             }
             <div className='flex flex-col gap-4'>
                 {
-                    reviews.map(reviewData => <Review key={reviewData._id} reviewData={reviewData}></Review>)
+                    reviews.map(reviewData => <Review key={reviewData._id} reviewData={reviewData} reviewLoader={reviewLoader} setReviewLoader={setReviewLoader}></Review>)
                 }
             </div>
+            {
+                reviewLoader &&
+                <div className='text-center font-medium flex justify-center items-center text-xl'>
+                    <FaSpinner className="animate-spin mr-3 text-primary text-3xl"></FaSpinner>
+                    Loading reviews...
+                </div>
+            }
         </div>
     );
 };
