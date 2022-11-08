@@ -4,18 +4,21 @@ import { FaGoogle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/AuthProvider/AuthProvider';
 
-const GoogleSignIn = () => {
+const GoogleSignIn = ({ from }) => {
 
-    const { googleSignIn } = useContext(UserContext);
+    const { googleSignIn, setLoading } = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
-                navigate('/')
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 toast.error(error.message)
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }
 

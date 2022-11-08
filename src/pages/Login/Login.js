@@ -6,7 +6,7 @@ import GoogleSignIn from '../../firebase/GoogleSignIn';
 
 const Login = () => {
 
-    const { emailSignIn, setUserInfo } = useContext(UserContext);
+    const { emailSignIn, setUserInfo, setLoading } = useContext(UserContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -20,11 +20,14 @@ const Login = () => {
         emailSignIn(userEmail, userPassword)
             .then(result => {
                 const user = result.user;
-                setUserInfo(user)
-                navigate(from, { replace: true })
+                setUserInfo(user);
+                navigate(from, { replace: true });
             })
             .catch(error => {
-                toast.error(error.message)
+                toast.error(error.message);
+            })
+            .finally(() => {
+                setLoading(false);
             })
     }
 
@@ -48,7 +51,7 @@ const Login = () => {
                     <button type='submit' className='btn btn-primary w-full mt-6'>Login</button>
                     <p className='text-base mt-4 text-center'>Don't have an account? <Link to='/register' className='text-primary font-medium'>Register.</Link></p>
                 </form>
-                <GoogleSignIn></GoogleSignIn>
+                <GoogleSignIn from={from}></GoogleSignIn>
             </div>
         </div>
     );

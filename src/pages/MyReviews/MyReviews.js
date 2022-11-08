@@ -13,7 +13,7 @@ const MyReviews = () => {
     const email = userInfo?.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my-reviews?email=${email}`)
+        fetch(`https://smiley-dental-services-server.vercel.app/my-reviews?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
@@ -27,7 +27,7 @@ const MyReviews = () => {
         const confirmation = window.confirm('Are you sure, you want to delete?')
 
         if (confirmation) {
-            fetch(`http://localhost:5000/my-reviews?id=${id}`, {
+            fetch(`https://smiley-dental-services-server.vercel.app/my-reviews?id=${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -42,10 +42,13 @@ const MyReviews = () => {
         }
     }
 
+    console.log(reviews)
+    console.log(email)
+
 
     return (
         <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_348px)]'>
-            <h1 className='text-2xl md:text-3xl font-medium text-center'>My Reviews</h1>
+            <h1 className='text-2xl md:text-2xl font-medium text-center'>My Reviews</h1>
             <div className='bg-base-300/70 rounded-xl p-4 lg:p-8 mt-8'>
                 <div className='flex flex-col gap-4'>
                     {
@@ -61,9 +64,9 @@ const MyReviews = () => {
                         </div>
                     }
                     {
-                        reviews.length === 0 &&
+                        (reviews.length === 0) && (!reviewLoader) &&
                         <div>
-                            <p className='pb-6'>You haven't reviews any services yet</p>
+                            <p className='pb-6'>You haven't reviewed any services yet</p>
                             <Link to='/services'><button className='btn btn-primary'>Go to Services</button></Link>
                         </div>
                     }
