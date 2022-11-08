@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
+import GoogleSignIn from '../../firebase/GoogleSignIn';
 
 const Login = () => {
 
@@ -47,6 +48,7 @@ const Login = () => {
                     <button type='submit' className='btn btn-primary w-full mt-6'>Login</button>
                     <p className='text-base mt-4 text-center'>Don't have an account? <Link to='/register' className='text-primary font-medium'>Register.</Link></p>
                 </form>
+                <GoogleSignIn></GoogleSignIn>
             </div>
         </div>
     );

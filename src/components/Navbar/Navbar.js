@@ -36,9 +36,11 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-medium">
                         <li><NavLink to='/services'>Services</NavLink></li>
-                        {(userInfo && userInfo.uid) ?
+                        {(userInfo && userInfo?.uid) ?
                             <>
-                                <li className='ml-4' title={userInfo.displayName || userInfo.email}>
+                                <li><NavLink to='/my-reviews'>My Reviews</NavLink></li>
+                                <li><NavLink to='/add-service'>Add Service</NavLink></li>
+                                <li className='ml-4' title={userInfo?.displayName || userInfo?.email}>
                                     Profile
                                 </li>
                                 <li><Link onClick={handleSignOut}>Logout</Link></li>
@@ -59,15 +61,15 @@ const Navbar = () => {
             </div>
             <div className="hidden md:flex">
                 <ul className="menu menu-horizontal p-0 font-medium items-center">
-                    <li><NavLink to='/services' className='py-2.5 px-5'>Services</NavLink></li>
-                    {(userInfo && userInfo.uid) ?
+                    <li><NavLink to='/services' className='py-2.5 px-4'>Services</NavLink></li>
+                    {(userInfo && userInfo?.uid) ?
                         <>
-                            <li><NavLink to='/my-reviews' className='py-2.5 px-5'>My Reviews</NavLink></li>
-                            <li><NavLink to='/add-service' className='py-2.5 px-5'>Add Service</NavLink></li>
-                            <li><Link className='py-2.5 px-5' onClick={handleSignOut}>Logout</Link></li>
-                            <li className='ml-2' title={userInfo.displayName || userInfo.email}>
-                                {userInfo.photoURL ?
-                                    <img className='w-8 p-0 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' src={userInfo.photoURL} alt=''></img>
+                            <li><NavLink to='/my-reviews' className='py-2.5 px-4'>My Reviews</NavLink></li>
+                            <li><NavLink to='/add-service' className='py-2.5 px-4'>Add Service</NavLink></li>
+                            <li><Link className='py-2.5 px-4' onClick={handleSignOut}>Logout</Link></li>
+                            <li className='ml-4' title={userInfo?.displayName || userInfo?.email}>
+                                {userInfo?.photoURL ?
+                                    <img className='w-8 p-0 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' src={userInfo?.photoURL} alt=''></img>
                                     :
                                     <FaUser className='text-primary p-1 text-3xl'></FaUser>
                                 }
@@ -75,8 +77,8 @@ const Navbar = () => {
                         </>
                         :
                         <>
-                            <li><NavLink to='/login' className='py-2.5 px-5'>Login</NavLink></li>
-                            <li><NavLink to='/register' className='py-2.5 px-5'>Register</NavLink></li>
+                            <li><NavLink to='/login' className='py-2.5 px-4'>Login</NavLink></li>
+                            <li><NavLink to='/register' className='py-2.5 px-4'>Register</NavLink></li>
                         </>
                     }
                 </ul>
