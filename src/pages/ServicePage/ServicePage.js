@@ -1,12 +1,12 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaStar, FaDollarSign } from 'react-icons/fa';
+import Reviews from '../../components/Reviews/Reviews';
 
 
 const ServicePage = () => {
 
     const service = useLoaderData();
-    console.log(service)
     const { _id, name, img, cost, description, rating } = service;
 
     return (
@@ -28,6 +28,7 @@ const ServicePage = () => {
                     <p className='text-justify'>{description}</p>
                 </div>
             </div>
+            <Reviews id={_id}></Reviews>
         </div>
     );
 };
