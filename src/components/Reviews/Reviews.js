@@ -82,12 +82,12 @@ const Reviews = ({ id }) => {
                     </div>
             }
             {
-                (reviews.length === 0) &&
+                (reviews.length === 0) && (!reviewLoader) &&
                 <p className='text-xl font-medium'>No Reviews Found. Be the first to Review!!</p>
             }
             <div className='flex flex-col gap-4'>
                 {
-                    reviews.map(reviewData => <Review key={reviewData._id} reviewData={reviewData} reviewLoader={reviewLoader} setReviewLoader={setReviewLoader}></Review>)
+                    reviews.map(reviewData => <Review key={reviewData._id} reviewData={reviewData}></Review>)
                 }
             </div>
             {

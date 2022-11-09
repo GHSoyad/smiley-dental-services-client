@@ -18,7 +18,7 @@ const ServicePage = () => {
                     <div className='flex gap-8 lg:gap-12'>
                         <div className='flex items-center gap-2'>
                             <FaStar className='text-primary'></FaStar>
-                            <p className='font-medium'>Rating: {rating}</p>
+                            <p className='font-medium'>Rating: {rating ? rating : '--'}</p>
                         </div>
                         <div className='flex items-center gap-1'>
                             <FaDollarSign className='text-primary'></FaDollarSign>

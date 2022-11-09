@@ -8,14 +8,12 @@ const AddService = () => {
         const form = event.target;
         const name = form.service.value;
         const cost = form.cost.value;
-        const rating = form.rating.value;
         const img = form.imgURL.value;
         const description = form.description.value;
 
         const service = {
             name,
             cost,
-            rating,
             img,
             description
         }
@@ -50,19 +48,11 @@ const AddService = () => {
                             </label>
                             <input name='service' type="text" placeholder="Type here..." className="input w-full input-bordered input-primary" required />
                         </div>
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6 lg:gap-8'>
-                            <div>
-                                <label className="label font-medium">
-                                    <span className="label-text">Service Cost</span>
-                                </label>
-                                <input name='cost' type="number" placeholder="Type here..." className="input w-full input-bordered input-primary" required />
-                            </div>
-                            <div>
-                                <label className="label font-medium">
-                                    <span className="label-text">Service Rating</span>
-                                </label>
-                                <input name='rating' type="number" defaultValue="5" placeholder="Type here..." className="input w-full input-bordered input-primary" required />
-                            </div>
+                        <div>
+                            <label className="label font-medium">
+                                <span className="label-text">Service Cost</span>
+                            </label>
+                            <input name='cost' type="number" placeholder="Type here..." className="input w-full input-bordered input-primary" required />
                         </div>
                     </div>
                     <div>
