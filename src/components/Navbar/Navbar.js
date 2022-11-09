@@ -34,6 +34,7 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-medium">
                         <li><NavLink to='/services'>Services</NavLink></li>
+                        <li><NavLink to='/blogs'>Blogs</NavLink></li>
                         {(userInfo && userInfo?.uid) ?
                             <>
                                 <li><NavLink to='/my-reviews'>My Reviews</NavLink></li>
@@ -60,6 +61,7 @@ const Navbar = () => {
             <div className="hidden md:flex">
                 <ul className="menu menu-horizontal p-0 font-medium items-center">
                     <li><NavLink to='/services' className='py-2.5 px-4'>Services</NavLink></li>
+                    <li><NavLink to='/blogs' className='py-2.5 px-4'>Blogs</NavLink></li>
                     {(userInfo && userInfo?.uid) ?
                         <>
                             <li><NavLink to='/my-reviews' className='py-2.5 px-4'>My Reviews</NavLink></li>
