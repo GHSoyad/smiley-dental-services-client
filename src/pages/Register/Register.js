@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
+import { FaSpinner } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
 import GoogleSignIn from '../../firebase/GoogleSignIn';
 
 const Register = () => {
 
-    const { emailRegistration, profileUpdate, setUserInfo } = useContext(UserContext);
+    const { emailRegistration, profileUpdate, setUserInfo, setLoading, loading } = useContext(UserContext);
     const success = (message) => toast.success(message, { duration: 8000 });
     const navigate = useNavigate();
 
@@ -46,6 +47,9 @@ const Register = () => {
             .catch(error => {
                 toast.error(error.message)
             })
+            .finally(() => {
+                setLoading(false)
+            })
     }
 
     // Update user profile
@@ -61,8 +65,15 @@ const Register = () => {
     }
 
     return (
-        <div className='bg-base-100 container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl'>
+        <div className='bg-base-100 container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl relative'>
             <Helmet><title>Register - Smiley</title></Helmet>
+            {
+                loading &&
+                <div className='flex justify-center items-center text-primary text-2xl font-medium absolute top-0 right-1/2 translate-x-1/2 z-10 bg-white/80 w-[448px] h-[716px]'>
+                    <FaSpinner className="animate-spin mr-3"></FaSpinner>
+                    Registering...
+                </div>
+            }
             <div className='backdrop-blur-sm bg-base-300/70 max-w-md mx-auto p-8 rounded-lg text-xl'>
                 <form onSubmit={handleUserRegistration}>
                     <h1 className='text-2xl md:text-3xl text-primary font-medium mb-6 text-center'>Register Here</h1>

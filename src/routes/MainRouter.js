@@ -24,7 +24,6 @@ const router = createBrowserRouter([
             },
             {
                 path: "/services",
-                loader: () => fetch('https://smiley-dental-services-server.vercel.app/services'),
                 element: <Services></Services>
             },
             {
