@@ -21,7 +21,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='w-full bg-base-100/50 relative z-20'>
+        <div className='w-full bg-[#a3f1ec] relative z-20'>
             <div className="navbar container mx-auto max-w-screen-xl mb-4 md:mb-10 py-2 md:py-5 justify-between">
                 <div className='hidden md:flex gap-3'>
                     <Link to='/'><img src={logo} alt="" className='w-12 h-full rounded' /></Link>

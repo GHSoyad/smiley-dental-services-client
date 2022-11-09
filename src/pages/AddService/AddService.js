@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 
 const AddService = () => {
@@ -38,8 +39,10 @@ const AddService = () => {
 
 
     return (
-        <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_348px)]'>
-            <div className='bg-base-300/70 p-4 md:p-8 rounded-xl'>
+        <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_364px)]'>
+            <Helmet><title>Add Service - Smiley</title></Helmet>
+            <h1 className='text-2xl md:text-3xl font-medium text-center'>Add Service</h1>
+            <div className='bg-base-300/70 p-4 md:p-8 rounded-xl mt-8'>
                 <form onSubmit={handleAddService} className='bg-white p-4 flex flex-col gap-2 md:gap-4 md:p-8 rounded-xl'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6 lg:gap-8'>
                         <div>

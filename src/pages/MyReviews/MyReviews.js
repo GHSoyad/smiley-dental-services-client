@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { FaSpinner } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -43,7 +44,8 @@ const MyReviews = () => {
 
     return (
         <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_348px)]'>
-            <h1 className='text-2xl md:text-2xl font-medium text-center'>My Reviews</h1>
+            <Helmet><title>My Reviews - Smiley</title></Helmet>
+            <h1 className='text-2xl md:text-3xl font-medium text-center'>My Reviews</h1>
             <div className='bg-base-300/70 rounded-xl p-4 lg:p-8 mt-8'>
                 <div className='flex flex-col gap-4'>
                     {

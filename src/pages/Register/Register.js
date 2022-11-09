@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
@@ -61,9 +62,10 @@ const Register = () => {
 
     return (
         <div className='bg-base-100 container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl'>
+            <Helmet><title>Register - Smiley</title></Helmet>
             <div className='backdrop-blur-sm bg-base-300/70 max-w-md mx-auto p-8 rounded-lg text-xl'>
                 <form onSubmit={handleUserRegistration}>
-                    <h1 className='text-3xl text-primary font-medium mb-6 text-center'>Register Here</h1>
+                    <h1 className='text-2xl md:text-3xl text-primary font-medium mb-6 text-center'>Register Here</h1>
                     <div className="form-control w-full mb-2">
                         <label className="label">
                             <span>Your Full Name</span>

@@ -3,6 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import Pricing from '../../components/Pricing/Pricing';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import { FaFacebookF, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
 
@@ -10,6 +11,7 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet><title>Home - Smiley</title></Helmet>
             <section className="relative -mt-[128px] bg-[url(https://i.ibb.co/Zzr3Vb9/hero-cover.jpg)] bg-cover bg-center bg-no-repeat" >
                 <div className="absolute inset-0 bg-white/50 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/40 sm:to-white/0" ></div>
                 <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
@@ -42,8 +44,7 @@ const Home = () => {
                 </div>
 
                 <div>
-                    <h1 className='text-xl md:text-3xl font-medium text-center mb-8'>About Me</h1>
-
+                    <h1 className='text-2xl md:text-3xl font-medium text-center mb-8'>About Me</h1>
                     <div className='flex flex-col md:flex-row border border-primary/30 rounded'>
                         <div className='md:w-2/5'>
                             <img src="https://i.ibb.co/dLbmNd2/dentist.jpg" alt="" className='rounded' />

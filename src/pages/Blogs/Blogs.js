@@ -1,10 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { FaComment, FaEye, FaUser } from 'react-icons/fa';
 
 const Blogs = () => {
     return (
         <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_356px)]'>
-            <h1 className='text-xl md:text-2xl font-medium text-center'>My Blogs</h1>
+            <Helmet><title>Blogs - Smiley</title></Helmet>
+            <h1 className='text-2xl md:text-3xl font-medium text-center'>My Blogs</h1>
             <div className='flex flex-col my-10 gap-6 md:gap-10'>
                 <div className='flex flex-col lg:flex-row gap-0 md:gap-4 ring ring-primary/50'>
                     <img src="https://i.ibb.co/Jp4T9d2/sql-vs-nosql.jpg" alt="" className='lg:w-1/2 object-cover' />
