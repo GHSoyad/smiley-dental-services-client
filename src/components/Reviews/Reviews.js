@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaSpinner } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
 import Review from '../Review/Review';
 
@@ -10,6 +10,7 @@ const Reviews = ({ id }) => {
     const { userInfo } = useContext(UserContext);
     const [reviews, setReviews] = useState([]);
     const [reviewLoader, setReviewLoader] = useState(true);
+    const location = useLocation();
 
     const handleReview = (event) => {
         event.preventDefault()
@@ -75,10 +76,14 @@ const Reviews = ({ id }) => {
                         <button type='submit' className='btn btn-primary'>Submit Review</button>
                     </form>
                     :
-                    <div className='flex items-center gap-4 text-xl font-medium'>
+                    <div className='flex items-center gap-2 text-xl font-medium'>
                         <p>Login to Review</p>
-                        <Link to='/login' className='text-primary hover:underline'>Login here!</Link>
+                        <Link to='/login' className='text-primary hover:underline' state={{ from: location }} replace >Login here!</Link>
                     </div>
+            }
+            {
+                (reviews.length === 0) &&
+                <p className='text-xl font-medium'>No Reviews Found. Be the first to Review!!</p>
             }
             <div className='flex flex-col gap-4'>
                 {

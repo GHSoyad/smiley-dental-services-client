@@ -22,7 +22,6 @@ const MyReviews = () => {
             .catch(error => console.log(error))
     }, [email])
 
-
     const handleDelete = id => {
         const confirmation = window.confirm('Are you sure, you want to delete?')
 
@@ -41,10 +40,6 @@ const MyReviews = () => {
                 .catch(error => console.log(error))
         }
     }
-
-    console.log(reviews)
-    console.log(email)
-
 
     return (
         <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_348px)]'>

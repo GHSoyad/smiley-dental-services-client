@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaUser } from "react-icons/fa";
 import logo from '../../logo.png';
@@ -8,14 +8,12 @@ import logo from '../../logo.png';
 const Navbar = () => {
 
     const { userInfo, setUserInfo, signOutUser } = useContext(UserContext);
-    const navigate = useNavigate();
 
     const handleSignOut = () => {
         signOutUser()
             .then(() => {
                 setUserInfo(null);
                 toast.success('Logged out Successfully');
-                navigate('/');
             })
             .catch(error => {
                 toast.error(error.message);
