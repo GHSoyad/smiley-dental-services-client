@@ -5,6 +5,7 @@ import { FaSpinner } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
 import GoogleSignIn from '../../firebase/GoogleSignIn';
+import { createJWT } from '../../utilities/createJWT';
 
 const Register = () => {
 
@@ -38,11 +39,13 @@ const Register = () => {
 
         emailRegistration(userEmail, userPassword)
             .then(userCredential => {
+                const user = userCredential.user;
                 form.reset()
                 handleProfileUpdate(userName, userPhoto)
+                createJWT(user)
                 navigate('/')
                 success("Registered Successfully.")
-                setUserInfo(userCredential.user)
+                setUserInfo(user)
             })
             .catch(error => {
                 toast.error(error.message)

@@ -5,6 +5,7 @@ import { FaSpinner } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
 import GoogleSignIn from '../../firebase/GoogleSignIn';
+import { createJWT } from '../../utilities/createJWT';
 
 const Login = () => {
 
@@ -22,26 +23,9 @@ const Login = () => {
         emailSignIn(userEmail, userPassword)
             .then(result => {
                 const user = result.user;
+                createJWT(user);
                 setUserInfo(user);
-
-                const currentUser = {
-                    email: user.email
-                }
-
-                fetch('https://smiley-dental-services-server.vercel.app/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(currentUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
-                        localStorage.setItem('smileySecretToken', data.token);
-                        navigate(from, { replace: true });
-                    })
-                    .catch(error => console.log(error))
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 toast.error(error.message);

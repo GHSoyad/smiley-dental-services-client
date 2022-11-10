@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/AuthProvider/AuthProvider';
+import { createJWT } from '../utilities/createJWT';
 
 const GoogleSignIn = ({ from }) => {
 
@@ -12,6 +13,8 @@ const GoogleSignIn = ({ from }) => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
+                const user = result.user;
+                createJWT(user);
                 navigate(from, { replace: true });
             })
             .catch(error => {
