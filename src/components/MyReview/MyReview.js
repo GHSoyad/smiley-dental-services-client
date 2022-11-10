@@ -81,7 +81,7 @@ const MyReview = ({ reviewData, handleDelete }) => {
                         <div className='flex justify-between items-center gap-4'>
                             <div className='flex items-center gap-2'>
                                 <div>
-                                    <Link to={`/service/${serviceId}`}><p className='font-medium'>{service.name}</p></Link>
+                                    <Link to={`/service/${serviceId}`}><p className='font-medium text-primary'>{service.name}</p></Link>
                                     <p className='text-sm'>{newDateTime}</p>
                                 </div>
                             </div>

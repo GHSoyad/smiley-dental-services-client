@@ -8,7 +8,7 @@ const Blogs = () => {
             <Helmet><title>Blogs - Smiley</title></Helmet>
             <h1 className='text-2xl md:text-3xl font-medium text-center'>My Blogs</h1>
             <div className='flex flex-col my-10 gap-6 md:gap-10'>
-                <div className='flex flex-col lg:flex-row gap-0 md:gap-4 ring ring-primary/50'>
+                <div className='flex flex-col lg:flex-row gap-0 md:gap-4 ring ring-primary/20 shadow-lg'>
                     <img src="https://i.ibb.co/Jp4T9d2/sql-vs-nosql.jpg" alt="" className='lg:w-1/2 object-cover' />
                     <div className='flex flex-col gap-6 p-6 justify-between lg:w-1/2'>
                         <div className='flex flex-col gap-5'>
@@ -33,7 +33,7 @@ const Blogs = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col lg:flex-row gap-0 md:gap-4 ring ring-primary/50'>
+                <div className='flex flex-col lg:flex-row gap-0 md:gap-4 ring ring-primary/20 shadow-lg'>
                     <img src="https://i.ibb.co/mCS101F/jwt.png" alt="" className='lg:w-1/2 object-cover' />
                     <div className='flex flex-col gap-6 p-6 justify-between lg:w-1/2'>
                         <div className='flex flex-col gap-5'>
@@ -58,7 +58,7 @@ const Blogs = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col lg:flex-row gap-0 md:gap-4 ring ring-primary/50'>
+                <div className='flex flex-col lg:flex-row gap-0 md:gap-4 ring ring-primary/20 shadow-lg'>
                     <img src="https://i.ibb.co/SVgj9kM/javascript-vs-node-Js.jpg" alt="" className='lg:w-1/2 object-cover' />
                     <div className='flex flex-col gap-6 p-6 justify-between lg:w-1/2'>
                         <div className='flex flex-col gap-5'>
@@ -83,7 +83,7 @@ const Blogs = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col lg:flex-row gap-0 md:gap-4 ring ring-primary/50'>
+                <div className='flex flex-col lg:flex-row gap-0 md:gap-4 ring ring-primary/20 shadow-lg'>
                     <img src="https://i.ibb.co/fdYtw3H/nodejs-server.png" alt="" className='lg:w-1/2 object-cover' />
                     <div className='flex flex-col gap-6 p-6 justify-between lg:w-1/2'>
                         <div className='flex flex-col gap-5'>

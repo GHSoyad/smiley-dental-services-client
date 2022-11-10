@@ -39,13 +39,8 @@ const Home = () => {
                 </div>
 
                 <div>
-                    <h1 className='text-2xl md:text-3xl font-medium text-center mb-8'>Pricing Package</h1>
-                    <Pricing></Pricing>
-                </div>
-
-                <div>
-                    <h1 className='text-2xl md:text-3xl font-medium text-center mb-8'>About Me</h1>
-                    <div className='flex flex-col md:flex-row border border-primary/30 rounded'>
+                    <h1 className='text-2xl md:text-3xl font-medium text-center mb-8'>About Dentist</h1>
+                    <div className='flex flex-col md:flex-row ring ring-primary/10 rounded shadow-lg'>
                         <div className='md:w-2/5'>
                             <img src="https://i.ibb.co/dLbmNd2/dentist.jpg" alt="" className='rounded' />
                         </div>
@@ -86,6 +81,11 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div>
+                    <h1 className='text-2xl md:text-3xl font-medium text-center mb-8'>Pricing Package</h1>
+                    <Pricing></Pricing>
                 </div>
             </section>
         </div>

@@ -77,7 +77,7 @@ const Reviews = ({ id }) => {
                     </form>
                     :
                     <div className='flex items-center gap-2 text-xl font-medium'>
-                        <p>Login to Review</p>
+                        <p>Login to add a Review</p>
                         <Link to='/login' className='text-primary hover:underline' state={{ from: location }} replace >Login here!</Link>
                     </div>
             }

@@ -3,7 +3,7 @@ import React from 'react';
 const Pricing = () => {
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 font-medium'>
-            <div className='flex flex-col p-4 text-center rounded-lg border border-primary/30 shadow-xl xl:p-8 gap-4 md:gap-6'>
+            <div className='flex flex-col p-4 text-center rounded-lg ring ring-primary/10 shadow-xl xl:p-8 gap-4 md:gap-6'>
                 <p className='text-2xl font-semibold'>Basic Package</p>
                 <div className="flex justify-center items-baseline my-3">
                     <span className="mr-2 text-5xl font-extrabold">$100</span>
@@ -33,7 +33,7 @@ const Pricing = () => {
                 </ul>
                 <button className='btn btn-primary mt-4'>Get started</button>
             </div>
-            <div className='flex flex-col p-4 text-center rounded-lg border border-primary/30 shadow-xl xl:p-8 gap-4 md:gap-6'>
+            <div className='flex flex-col p-4 text-center rounded-lg ring ring-primary/10 shadow-xl xl:p-8 gap-4 md:gap-6'>
                 <p className='text-2xl font-semibold'>Regular Package</p>
                 <div className="flex justify-center items-baseline my-3">
                     <span className="mr-2 text-5xl font-extrabold">$250</span>
@@ -63,7 +63,7 @@ const Pricing = () => {
                 </ul>
                 <button className='btn btn-primary mt-4'>Premium started</button>
             </div>
-            <div className='flex flex-col p-4 text-center rounded-lg border border-primary/30 shadow-xl xl:p-8 gap-4 md:gap-6'>
+            <div className='flex flex-col p-4 text-center rounded-lg ring ring-primary/10 shadow-xl xl:p-8 gap-4 md:gap-6'>
                 <p className='text-2xl font-semibold'>Basic Package</p>
                 <div className="flex justify-center items-baseline my-3">
                     <span className="mr-2 text-5xl font-extrabold">$500</span>
