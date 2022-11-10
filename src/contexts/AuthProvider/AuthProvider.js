@@ -32,6 +32,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const signOutUser = () => {
+        localStorage.removeItem('smileySecretToken');
         return signOut(auth);
     }
 

@@ -16,7 +16,7 @@ const Home = () => {
                 <div className="absolute inset-0 bg-white/50 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/40 sm:to-white/0" ></div>
                 <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
                     <div className="max-w-2xl text-center sm:text-left">
-                        <h1 className="text-3xl font-extrabold sm:text-5xl">Crafting Smiles With<strong className="block font-extrabold text-primary mt-2">Our Personal Touch.</strong></h1>
+                        <h1 className="text-3xl font-extrabold sm:text-5xl">Crafting Smiles With<strong className="block font-extrabold text-primary mt-2">Personal Touch.</strong></h1>
                         <p className="mt-4 sm:text-xl">A personalized approach to creating the perfect smile</p>
                         <div className="mt-8 flex flex-wrap gap-4 text-center">
                             <Link to='/services' className='w-full rounded sm:w-auto'><button className="btn btn-primary px-12 py-3 text-sm font-medium">Get Started</button></Link>
@@ -26,9 +26,9 @@ const Home = () => {
             </section>
 
             <section className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_348px)] flex flex-col gap-20'>
-                <div className='mt-20'>
+                <div className='mt-10 md:mt-20'>
                     <h1 className='text-2xl md:text-3xl font-medium text-center mb-8'>Dental Services</h1>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 xl:gap-10 '>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-10 '>
                         {
                             services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
                         }

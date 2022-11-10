@@ -5,7 +5,7 @@ import logo from '../../logo.png';
 
 const Footer = () => {
     return (
-        <div className='w-full bg-base-300/70 mt-12 md:mt-16'>
+        <div className='w-full bg-base-300 mt-12 md:mt-16'>
             <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl pt-3'>
                 <div className='py-5'>
                     <div className='grid grid-cols-1 md:grid-cols-3 justify-between items-center gap-8 text-center py-5'>
@@ -14,11 +14,12 @@ const Footer = () => {
                             <Link to='/'><p className='text-xl font-medium'>Smiley Dental Services</p></Link>
                         </div>
                         <div className='flex justify-center items-center'>
-                            <ul className='flex flex-wrap gap-7'>
+                            <ul className='flex flex-wrap gap-7 gap-y-3 justify-center'>
                                 <li><Link to='/'>Home</Link></li>
                                 <li><Link to='/services'>Services</Link></li>
                                 <li><Link to='/blogs'>Blogs</Link></li>
                                 <li><Link to='/login'>Login</Link></li>
+                                <li><Link to='/register'>Register</Link></li>
                             </ul>
                         </div>
                         <div className='flex items-center justify-center text-2xl text-primary gap-6'>

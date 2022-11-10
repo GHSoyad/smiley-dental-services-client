@@ -11,7 +11,7 @@ const ServiceCard = ({ service }) => {
     return (
         <PhotoProvider maskOpacity={0.9}>
             <div className="card card-compact bg-base-100 shadow-xl ring ring-primary/10 rounded">
-                <PhotoView src={img}><img src={img} alt={name} className="w-full object-cover md:h-[200px]" /></PhotoView>
+                <PhotoView src={img}><img src={img} alt={name} className="w-full object-cover md:h-[200px] rounded-t" /></PhotoView>
                 <div className="card-body">
                     <div className='flex justify-between'>
                         <h2 className="card-title">{name}</h2>

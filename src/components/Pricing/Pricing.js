@@ -5,8 +5,8 @@ const Pricing = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 font-medium'>
             <div className='flex flex-col p-4 text-center rounded-lg ring ring-primary/10 shadow-xl xl:p-8 gap-4 md:gap-6'>
                 <p className='text-2xl font-semibold'>Basic Package</p>
-                <div className="flex justify-center items-baseline my-3">
-                    <span className="mr-2 text-5xl font-extrabold">$100</span>
+                <div className="flex justify-center items-baseline my-1 md:my-3">
+                    <span className="mr-2 text-4xl md:text-5xl font-extrabold">$100</span>
                     <span>/month</span>
                 </div>
                 <ul className='flex flex-col gap-3 text-center'>
@@ -35,8 +35,8 @@ const Pricing = () => {
             </div>
             <div className='flex flex-col p-4 text-center rounded-lg ring ring-primary/10 shadow-xl xl:p-8 gap-4 md:gap-6'>
                 <p className='text-2xl font-semibold'>Regular Package</p>
-                <div className="flex justify-center items-baseline my-3">
-                    <span className="mr-2 text-5xl font-extrabold">$250</span>
+                <div className="flex justify-center items-baseline my-1 md:my-3">
+                    <span className="mr-2 text-4xl md:text-5xl font-extrabold">$250</span>
                     <span>/month</span>
                 </div>
                 <ul className='flex flex-col gap-3 text-center'>
@@ -65,8 +65,8 @@ const Pricing = () => {
             </div>
             <div className='flex flex-col p-4 text-center rounded-lg ring ring-primary/10 shadow-xl xl:p-8 gap-4 md:gap-6'>
                 <p className='text-2xl font-semibold'>Basic Package</p>
-                <div className="flex justify-center items-baseline my-3">
-                    <span className="mr-2 text-5xl font-extrabold">$500</span>
+                <div className="flex justify-center items-baseline my-1 md:my-3">
+                    <span className="mr-2 text-4xl md:text-5xl font-extrabold">$500</span>
                     <span>/month</span>
                 </div>
                 <ul className='flex flex-col gap-3 text-center'>
