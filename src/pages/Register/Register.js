@@ -65,7 +65,7 @@ const Register = () => {
     }
 
     return (
-        <div className='bg-base-100 container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl relative'>
+        <div className='bg-base-100 container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl relative min-h-[calc(100vh_-_348px)'>
             <Helmet><title>Register - Smiley</title></Helmet>
             {
                 loading &&

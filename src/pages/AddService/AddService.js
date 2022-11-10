@@ -39,7 +39,7 @@ const AddService = () => {
 
 
     return (
-        <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_364px)]'>
+        <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_348px)]'>
             <Helmet><title>Add Service - Smiley</title></Helmet>
             <h1 className='text-2xl md:text-3xl font-medium text-center'>Add Service</h1>
             <div className='bg-base-300/70 p-4 md:p-8 rounded-xl mt-8'>

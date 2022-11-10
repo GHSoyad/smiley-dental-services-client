@@ -4,7 +4,7 @@ import { FaComment, FaEye, FaUser } from 'react-icons/fa';
 
 const Blogs = () => {
     return (
-        <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_356px)]'>
+        <div className='container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_348px)]'>
             <Helmet><title>Blogs - Smiley</title></Helmet>
             <h1 className='text-2xl md:text-3xl font-medium text-center'>My Blogs</h1>
             <div className='flex flex-col my-10 gap-6 md:gap-10'>
