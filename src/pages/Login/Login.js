@@ -14,7 +14,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
 
     // SignIn user
-    const handleUserSignIn = (event) => {
+    const handleSignIn = (event) => {
         event.preventDefault();
         const userEmail = event.target.email.value;
         const userPassword = event.target.password.value;
@@ -23,7 +23,25 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 setUserInfo(user);
-                navigate(from, { replace: true });
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                fetch('https://smiley-dental-services-server.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('smileySecretToken', data.token);
+                        navigate(from, { replace: true });
+                    })
+                    .catch(error => console.log(error))
             })
             .catch(error => {
                 toast.error(error.message);
@@ -38,13 +56,13 @@ const Login = () => {
             <Helmet><title>Login - Smiley</title></Helmet>
             {
                 loading &&
-                <div className='flex justify-center items-center text-primary text-2xl font-medium absolute top-0 right-1/2 translate-x-1/2 z-10 bg-white/80 w-[448px] h-[436px]'>
+                <div className='flex justify-center items-center text-primary text-2xl font-medium absolute top-0 right-1/2 translate-x-1/2 z-10 bg-white/80 w-[448px] h-[516px]'>
                     <FaSpinner className="animate-spin mr-3"></FaSpinner>
                     Logging in...
                 </div>
             }
             <div className='backdrop-blur-sm bg-base-300/70 max-w-md mx-auto p-8 rounded-lg text-xl '>
-                <form onSubmit={handleUserSignIn}>
+                <form onSubmit={handleSignIn}>
                     <h1 className='text-2xl md:text-3xl text-primary font-medium mb-6 text-center'>Login Here</h1>
                     <div className="form-control w-full mb-2">
                         <label className="label">

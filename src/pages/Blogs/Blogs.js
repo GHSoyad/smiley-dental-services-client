@@ -43,8 +43,7 @@ const Blogs = () => {
                                 <p className='font-medium'>Golam Hasnain Soyad</p>
                             </div>
                             <p className='text-justify'>
-                                JSON Web Token (JWT) is an open standard (RFC 7519) for securely transmitting information between parties as JSON object. The JWT is divided into three parts- Header, Payload, and Signature.
-                                JWT or JSON Web Tokens are mainly used for authentication, authorization, and information exchange. During authentication, a JWT is returned when the user successfully logs in using their credentials. User can save it locally either in the local storage, session storage, or cookies. After the user is authenticated if they want to access data from the server. The user can use JWT to retrieve the data. JWT is sent by the user with every request to the server.
+                                JSON Web Token (JWT) is an open standard for securely transmitting information between client and server as JSON object. JWTare mainly used for authorization and secure information exchange. During authentication, a JWT is returned when the user successfully logs in using their credentials. User can save it locally either in the local storage, session storage, or cookies. After the user is authenticated if they want to access data from the server they need to send JWT with every request to retrieve the data. The server validates the JWT and sends response according to it.
                             </p>
                         </div>
                         <div className='flex items-center gap-10 font-medium'>

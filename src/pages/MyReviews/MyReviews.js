@@ -8,20 +8,29 @@ import { UserContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const MyReviews = () => {
 
-    const { userInfo } = useContext(UserContext);
+    const { userInfo, signOutUser } = useContext(UserContext);
     const [reviewLoader, setReviewLoader] = useState(true);
     const [reviews, setReviews] = useState([]);
     const email = userInfo?.email;
 
     useEffect(() => {
-        fetch(`https://smiley-dental-services-server.vercel.app/my-reviews?email=${email}`)
-            .then(res => res.json())
+        fetch(`https://smiley-dental-services-server.vercel.app/my-reviews?email=${email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('smileySecretToken')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    signOutUser()
+                }
+                return res.json()
+            })
             .then(data => {
                 setReviews(data);
                 setReviewLoader(false);
             })
             .catch(error => console.log(error))
-    }, [email])
+    }, [email, signOutUser])
 
     const handleDelete = id => {
         const confirmation = window.confirm('Are you sure, you want to delete?')
