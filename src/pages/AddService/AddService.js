@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 
 const AddService = () => {
 
+    // Post service
     const handleAddService = (event) => {
         event.preventDefault();
         const form = event.target;

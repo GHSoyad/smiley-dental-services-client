@@ -11,6 +11,7 @@ const MyReview = ({ reviewData, handleDelete }) => {
     const [newReview, setNewReview] = useState(review);
     const [newDateTime, setNewDateTime] = useState(dateTime)
 
+    // Load service data
     useEffect(() => {
         fetch(`https://smiley-dental-services-server.vercel.app/service/${serviceId}`)
             .then(res => res.json())
@@ -21,6 +22,7 @@ const MyReview = ({ reviewData, handleDelete }) => {
             .catch(error => console.log(error))
     }, [serviceId])
 
+    // Update review function
     const handleEditReview = (event, id) => {
         event.preventDefault();
         const form = event.target;

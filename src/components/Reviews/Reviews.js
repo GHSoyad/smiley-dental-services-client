@@ -12,6 +12,7 @@ const Reviews = ({ id }) => {
     const [reviewLoader, setReviewLoader] = useState(true);
     const location = useLocation();
 
+    // Post review
     const handleReview = (event) => {
         event.preventDefault()
         const review = event.target.review.value;
@@ -56,6 +57,7 @@ const Reviews = ({ id }) => {
             .catch(error => toast.error(error.message))
     }
 
+    // Load reviews data
     useEffect(() => {
         fetch(`https://smiley-dental-services-server.vercel.app/reviews?serviceId=${id}`)
             .then(res => res.json())

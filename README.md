@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Smiley Dental Services
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Live Website Link https://smiley-dental-services.web.app/
 
-## Available Scripts
+## Description
+The Project is developed using ReactJS, ExpressJS and FireBase and MongoDB, The app is responsive on smaller devices
 
-In the project directory, you can run:
+### CSS Freamework
+TailWind CSS Framework and DaisyUI components
 
-### `npm start`
+### React Library's used
+Some of the library's that was used in the project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### React Router
+ - To navigate the website
+ - To load data from the API
+ - To make dynamic paths for the website component
+ - To make private routing
+ - To redirect user
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### React Hot Toast
+ - To display messages
 
-### `npm test`
+#### React Icons
+ - To display icons
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### React Helmet
+ - To dynamically display site title
 
-### `npm run build`
+#### React Photo View
+ - To preview photos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pages
+The website consists of 8 main pages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ - Home
+ - Services
+ - Blogs
+ - Login
+ - Register
+ - Service Details
+ - My Reviews
+ - Add Service
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Service Details page is dynamic which changes based on selected service
 
-### `npm run eject`
+### Features
+Features of the website
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ - Navbar can be used to navigate the website
+ - Navbar has conditional rendering based on user login and logout
+ - Homepage contains a latest service list, Pricing package list, and Dentist bio
+ - Services page contains service list that can be selected
+ - Selecting a service takes user to the selected Service Details page
+ - Service Details page shows the name, image, price, rating and description of the service
+ - Service Details page has a reviews section at the bottom that displays all the reviews of the service
+ - Users can add reviews here, if they are logged in they will see a review form else they will see login button
+ - Blogs page shows the list of blogs with image, title, author name, description
+ - My Reviews page and Add service has private routing, users can only access these pages after login
+ - Login page has email-password and google login options
+ - Register page has email-password and google registration options
+ - Login, registration, google-login have jwt implemented with them
+ - Footer has the links of site pages and social media icons

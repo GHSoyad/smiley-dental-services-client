@@ -13,6 +13,7 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
     const email = userInfo?.email;
 
+    // Load user reviews
     useEffect(() => {
         fetch(`https://smiley-dental-services-server.vercel.app/my-reviews?email=${email}`, {
             headers: {
@@ -32,6 +33,7 @@ const MyReviews = () => {
             .catch(error => console.log(error))
     }, [email, signOutUser])
 
+    // Delete user review
     const handleDelete = id => {
         const confirmation = window.confirm('Are you sure, you want to delete?')
 

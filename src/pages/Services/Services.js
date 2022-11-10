@@ -8,6 +8,7 @@ const Services = () => {
     const [services, setServices] = useState([]);
     const [servicesLoader, setServicesLoader] = useState(true);
 
+    // Load services data
     useEffect(() => {
         fetch('https://smiley-dental-services-server.vercel.app/services')
             .then(res => res.json())

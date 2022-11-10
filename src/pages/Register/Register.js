@@ -13,6 +13,7 @@ const Register = () => {
     const success = (message) => toast.success(message, { duration: 8000 });
     const navigate = useNavigate();
 
+    // Register user
     const handleUserRegistration = (event) => {
         event.preventDefault();
         const form = event.target;

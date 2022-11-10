@@ -1,3 +1,4 @@
+// Create JWT
 const createJWT = (user) => {
     const currentUser = {
         email: user.email

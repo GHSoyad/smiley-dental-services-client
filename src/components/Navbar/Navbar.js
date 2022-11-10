@@ -9,6 +9,7 @@ const Navbar = () => {
 
     const { userInfo, setUserInfo, signOutUser } = useContext(UserContext);
 
+    // Sign out user
     const handleSignOut = () => {
         signOutUser()
             .then(() => {
