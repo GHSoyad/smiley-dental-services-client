@@ -69,46 +69,54 @@ const Register = () => {
     }
 
     return (
-        <div className='bg-base-100 container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl relative min-h-[calc(100vh_-_348px)'>
+        <div className='bg-base-100 container px-2 md:px-4 xl:px-0 mx-auto max-w-screen-xl min-h-[calc(100vh_-_348px)'>
             <Helmet><title>Register - Smiley</title></Helmet>
-            {
-                loading &&
-                <div className='flex justify-center items-center text-primary text-2xl font-medium absolute top-0 right-1/2 translate-x-1/2 z-10 bg-white/80 w-[448px] h-[716px]'>
-                    <FaSpinner className="animate-spin mr-3"></FaSpinner>
-                    Registering...
+
+            <div className='flex justify-center'>
+                <div className='hidden md:block md:w-1/2 xl:w-1/3 bg-base-300 p-8 rounded-l-lg'>
+                    <img src="https://i.ibb.co/x5DPRBR/left-side.jpg" alt="" className='w-full h-full object-cover rounded' />
                 </div>
-            }
-            <div className='backdrop-blur-sm bg-base-300/70 max-w-md mx-auto p-8 rounded-lg text-xl'>
-                <form onSubmit={handleUserRegistration}>
-                    <h1 className='text-2xl md:text-3xl text-primary font-medium mb-6 text-center'>Register Here</h1>
-                    <div className="form-control w-full mb-2">
-                        <label className="label">
-                            <span>Your Full Name</span>
-                        </label>
-                        <input name='name' type="text" placeholder="Type here..." className="input input-bordered input-primary" required />
+                <div className='w-full md:w-1/2 xl:w-1/3 relative'>
+                    {
+                        loading &&
+                        <div className='flex justify-center items-center text-primary text-2xl font-medium absolute top-0 right-0 z-10 bg-white/80 w-full h-full'>
+                            <FaSpinner className="animate-spin mr-3"></FaSpinner>
+                            Registering...
+                        </div>
+                    }
+                    <div className='backdrop-blur-sm bg-base-300 w-full mx-auto p-8 rounded-lg md:rounded-l-none'>
+                        <form onSubmit={handleUserRegistration}>
+                            <h1 className='text-2xl md:text-3xl text-primary font-medium mb-6 text-center'>Register Here</h1>
+                            <div className="form-control w-full mb-2">
+                                <label className="label font-medium">
+                                    <span>Your Full Name</span>
+                                </label>
+                                <input name='name' type="text" placeholder="Type here..." className="input input-bordered input-primary" required />
+                            </div>
+                            <div className="form-control w-full mb-2">
+                                <label className="label font-medium">
+                                    <span>Your Photo URL</span>
+                                </label>
+                                <input name='photo' type="text" placeholder="Type here..." className="input input-bordered input-primary" required />
+                            </div>
+                            <div className="form-control w-full mb-2">
+                                <label className="label font-medium">
+                                    <span>Your Email</span>
+                                </label>
+                                <input name='email' type="email" placeholder="Type here..." className="input input-bordered input-primary" required />
+                            </div>
+                            <div className="form-control w-full mb-2">
+                                <label className="label font-medium">
+                                    <span>Your Password</span>
+                                </label>
+                                <input name='password' type="password" placeholder="Type here..." className="input input-bordered input-primary" required />
+                            </div>
+                            <button type='submit' className='btn btn-primary w-full mt-6'>Register</button>
+                            <p className='text-base mt-4 text-center'>Already have an account? <Link to='/login' className='text-primary font-medium'>Login.</Link></p>
+                        </form>
+                        <GoogleSignIn></GoogleSignIn>
                     </div>
-                    <div className="form-control w-full mb-2">
-                        <label className="label">
-                            <span>Your Photo URL</span>
-                        </label>
-                        <input name='photo' type="text" placeholder="Type here..." className="input input-bordered input-primary" required />
-                    </div>
-                    <div className="form-control w-full mb-2">
-                        <label className="label">
-                            <span>Your Email</span>
-                        </label>
-                        <input name='email' type="email" placeholder="Type here..." className="input input-bordered input-primary" required />
-                    </div>
-                    <div className="form-control w-full mb-2">
-                        <label className="label">
-                            <span>Your Password</span>
-                        </label>
-                        <input name='password' type="password" placeholder="Type here..." className="input input-bordered input-primary" required />
-                    </div>
-                    <button type='submit' className='btn btn-primary w-full mt-6'>Register</button>
-                    <p className='text-base mt-4 text-center'>Already have an account? <Link to='/login' className='text-primary font-medium'>Login.</Link></p>
-                </form>
-                <GoogleSignIn></GoogleSignIn>
+                </div>
             </div>
         </div>
     );
